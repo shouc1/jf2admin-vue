@@ -1,0 +1,174 @@
+/* 全局样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #1a1a1a;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 主色调定义 */
+:root {
+  --primary-color: #37ba7d;
+  --secondary-color: #1a1a1a;
+  --tertiary-color: #2d2d2d;
+  --text-color: #fff;
+  --border-color: #333;
+}
+
+/* Element Plus 组件样式覆盖 */
+.el-card {
+  background-color: var(--tertiary-color);
+  border: 1px solid var(--border-color);
+}
+
+.el-table {
+  background-color: var(--tertiary-color);
+  border: 1px solid var(--border-color);
+}
+
+.el-table th {
+  background-color: var(--secondary-color) !important;
+  color: var(--text-color) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.el-table td {
+  background-color: var(--tertiary-color) !important;
+  color: var(--text-color) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.el-form-item__label {
+  color: var(--text-color) !important;
+}
+
+.el-input {
+  background-color: var(--secondary-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.el-input__inner {
+  color: var(--text-color) !important;
+  background-color: var(--secondary-color) !important;
+}
+
+.el-button--primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--secondary-color) !important;
+}
+
+.el-button--primary:hover {
+  background-color: #04f581 !important;
+  border-color: #0ae47b !important;
+}
+
+.el-dialog {
+  background-color: var(--tertiary-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.el-dialog__title {
+  color: var(--text-color) !important;
+}
+
+.el-checkbox__label {
+  color: var(--text-color) !important;
+}
+
+.el-select {
+  background-color: var(--secondary-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.el-select__input {
+  color: var(--text-color) !important;
+  background-color: var(--secondary-color) !important;
+}
+
+.el-select__caret {
+  color: var(--text-color) !important;
+}
+
+.el-select-dropdown {
+  background-color: var(--secondary-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.el-select-dropdown__item {
+  color: var(--text-color) !important;
+}
+
+.el-select-dropdown__item:hover {
+  background-color: var(--tertiary-color) !important;
+}
+
+.el-select-dropdown__item.selected {
+  background-color: var(--tertiary-color) !important;
+  color: var(--primary-color) !important;
+}
+
+/* 下拉框输入框容器样式 */
+.el-select .el-input__wrapper {
+  background-color: var(--secondary-color) !important;
+  box-shadow: none !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.el-select .el-input__wrapper.is-focus {
+  box-shadow: 0 0 0 1px var(--primary-color) inset !important;
+  border: 1px solid var(--primary-color) !important;
+}
+
+.el-select .el-input__inner {
+  color: var(--text-color) !important;
+  background-color: var(--secondary-color) !important;
+}
+
+/* 确保所有输入框都是深色 */
+.el-input {
+  background-color: var(--secondary-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.el-input__wrapper {
+  background-color: var(--secondary-color) !important;
+  box-shadow: none !important;
+}
+
+.el-input__inner {
+  color: var(--text-color) !important;
+  background-color: var(--secondary-color) !important;
+}
+
+.el-tag {
+  background-color: var(--secondary-color) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.el-tag--success {
+  background-color: var(--primary-color) !important;
+  color: var(--secondary-color) !important;
+}
+
+.el-tag--info {
+  background-color: #00bcd4 !important;
+  color: var(--secondary-color) !important;
+}
