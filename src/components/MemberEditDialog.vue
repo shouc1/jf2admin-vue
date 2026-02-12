@@ -282,24 +282,7 @@ const handlePromoteToAdmin = () => {
   background-color: var(--secondary-color) !important;
 }
 
-/* 强制覆盖下拉框输入框容器样式 */
-:deep(.el-select .el-input__wrapper) {
-  background-color: var(--secondary-color) !important;
-  box-shadow: none !important;
-  border: 1px solid var(--border-color) !important;
-}
-
-:deep(.el-select .el-input__wrapper.is-focus) {
-  box-shadow: 0 0 0 1px var(--primary-color) inset !important;
-  border: 1px solid var(--primary-color) !important;
-}
-
-:deep(.el-select .el-input__inner) {
-  color: var(--text-color) !important;
-  background-color: var(--secondary-color) !important;
-}
-
-/* 强制覆盖下拉框样式 */
+/* 下拉框样式 */
 :deep(.el-select) {
   background-color: var(--secondary-color) !important;
   border: 1px solid var(--border-color) !important;
@@ -312,6 +295,23 @@ const handlePromoteToAdmin = () => {
 
 :deep(.el-select__caret) {
   color: var(--text-color) !important;
+}
+
+/* 选中项样式 */
+:deep(.el-select__selected-item) {
+  color: var(--text-color) !important;
+  background-color: var(--secondary-color) !important;
+}
+
+:deep(.el-select__placeholder) {
+  color: var(--text-color) !important;
+  background-color: var(--secondary-color) !important;
+}
+
+/* 下拉框包装器样式 */
+:deep(.el-select__wrapper) {
+  background-color: var(--secondary-color) !important;
+  border: 1px solid var(--border-color) !important;
 }
 
 :deep(.el-select-dropdown) {
@@ -332,38 +332,43 @@ const handlePromoteToAdmin = () => {
   color: var(--primary-color) !important;
 }
 
-/* 强制覆盖下拉框输入框容器样式 */
-:deep(.el-select) {
-  background-color: var(--secondary-color) !important;
-  border: 1px solid var(--border-color) !important;
-}
-
+/* 下拉框输入框容器样式 */
 :deep(.el-select .el-input) {
   background-color: var(--secondary-color) !important;
   border: 1px solid var(--border-color) !important;
 }
 
 :deep(.el-select .el-input__wrapper) {
-  background-color: var(--secondary-color) !important ;
-  box-shadow: none !important ;
-  border: 1px solid var(--border-color) !important ;
+  background-color: var(--secondary-color) !important;
+  box-shadow: none !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+:deep(.el-select .el-input__wrapper.is-focus) {
+  box-shadow: 0 0 0 1px var(--primary-color) inset !important;
+  border: 1px solid var(--primary-color) !important;
 }
 
 :deep(.el-select .el-input__inner) {
-  color: var(--text-color) !important ;
-  background-color: var(--secondary-color) !important ;
+  color: var(--text-color) !important;
+  background-color: var(--secondary-color) !important;
 }
 
-/* 额外的覆盖 */
+/* 输入框样式 */
+:deep(.el-input) {
+  background-color: var(--secondary-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
 :deep(.el-input__wrapper) {
-  background-color: var(--secondary-color) !important ;
-  box-shadow: none !important ;
-  border: 1px solid var(--border-color) !important ;
+  background-color: var(--secondary-color) !important;
+  box-shadow: none !important;
+  border: 1px solid var(--border-color) !important;
 }
 
 :deep(.el-input__inner) {
-  color: var(--text-color) !important ;
-  background-color: var(--secondary-color) !important ;
+  color: var(--text-color) !important;
+  background-color: var(--secondary-color) !important;
 }
 
 /* 日期选择器样式 */
