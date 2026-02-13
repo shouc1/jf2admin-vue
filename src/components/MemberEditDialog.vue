@@ -428,14 +428,14 @@ const handlePromoteToAdmin = () => {
 }
 
 :deep(.el-button--success) {
-  background-color: #67C23A !important;
-  border-color: #67C23A !important;
+  background-color: #61a33f !important;
+  border-color: #61a33f !important;
   color: #fff !important;
 }
 
 :deep(.el-button--success:hover) {
-  background-color: #85CE61 !important;
-  border-color: #85CE61 !important;
+  background-color: #71aa54 !important;
+  border-color: #71aa54 !important;
 }
 
 :deep(.el-button:not(.el-button--primary):not(.el-button--success)) {
