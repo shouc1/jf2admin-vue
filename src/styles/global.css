@@ -104,6 +104,22 @@ html, body {
 
 .el-select__caret {
   color: var(--text-color) !important;
+  background-color: var(--secondary-color) !important;
+}
+
+.el-select__selected-item {
+  color: var(--text-color) !important;
+  background-color: var(--secondary-color) !important;
+}
+
+.el-select__placeholder {
+  color: var(--text-color) !important;
+  background-color: var(--secondary-color) !important;
+}
+
+.el-select__wrapper {
+  background-color: var(--secondary-color) !important;
+  border: 1px solid var(--border-color) !important;
 }
 
 .el-select-dropdown {
@@ -112,6 +128,7 @@ html, body {
 }
 
 .el-select-dropdown__item {
+  background-color: var(--secondary-color) !important;
   color: var(--text-color) !important;
 }
 
@@ -119,12 +136,12 @@ html, body {
   background-color: var(--tertiary-color) !important;
 }
 
-.el-select-dropdown__item.selected {
+.el-select-dropdown__item.selected,
+.el-select-dropdown__item.is-selected {
   background-color: var(--tertiary-color) !important;
   color: var(--primary-color) !important;
 }
 
-/* 下拉框输入框容器样式 */
 .el-select .el-input__wrapper {
   background-color: var(--secondary-color) !important;
   box-shadow: none !important;
@@ -171,4 +188,109 @@ html, body {
 .el-tag--info {
   background-color: #00bcd4 !important;
   color: var(--secondary-color) !important;
+}
+
+/* 日期选择器样式 - 全局样式，因为弹出面板挂载到body */
+.el-date-editor {
+  background-color: var(--secondary-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.el-date-editor .el-input__wrapper {
+  background-color: var(--secondary-color) !important;
+  box-shadow: none !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.el-date-editor .el-input__inner {
+  color: var(--text-color) !important;
+  background-color: var(--secondary-color) !important;
+}
+
+.el-date-editor .el-input__prefix,
+.el-date-editor .el-input__suffix {
+  color: var(--text-color) !important;
+}
+
+.el-picker-panel {
+  background-color: var(--secondary-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.el-picker-panel__header {
+  background-color: var(--secondary-color) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.el-picker-panel__header-label {
+  color: var(--text-color) !important;
+}
+
+.el-picker-panel__icon-btn {
+  color: var(--text-color) !important;
+}
+
+.el-date-picker__header-label {
+  color: var(--text-color) !important;
+}
+
+.el-picker-panel__content {
+  background-color: var(--secondary-color) !important;
+}
+
+.el-date-table {
+  background-color: var(--secondary-color) !important;
+}
+
+.el-date-table th {
+  color: var(--text-color) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.el-date-table td {
+  color: var(--text-color) !important;
+}
+
+.el-date-table td.available:hover {
+  color: var(--primary-color) !important;
+}
+
+.el-date-table td.today span {
+  color: var(--primary-color) !important;
+}
+
+.el-date-table td.current:not(.disabled) span {
+  background-color: var(--primary-color) !important;
+  color: var(--secondary-color) !important;
+}
+
+.el-date-table td.in-range div {
+  background-color: var(--tertiary-color) !important;
+}
+
+.el-picker-panel__footer {
+  background-color: var(--secondary-color) !important;
+  border-top: 1px solid var(--border-color) !important;
+}
+
+.el-time-panel {
+  background-color: var(--secondary-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.el-time-panel__content {
+  background-color: var(--secondary-color) !important;
+}
+
+.el-time-spinner__item {
+  color: var(--text-color) !important;
+}
+
+.el-time-spinner__item.active:not(.disabled) {
+  color: var(--primary-color) !important;
+}
+
+.el-time-panel__footer {
+  background-color: var(--secondary-color) !important;
+  border-top: 1px solid var(--border-color) !important;
 }
