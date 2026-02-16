@@ -183,6 +183,7 @@ function clearLoginInfo() {
 
 .name-section {
   text-align: center;
+  color: var(--text-color);
 }
 
 .name-section h1 {
