@@ -268,6 +268,9 @@ async function fetchReportList() {
       // 处理数据
       let data = res.data
       
+      // 调试：打印前2条数据的结构
+      console.log('Report data structure:', JSON.stringify(data.slice(0, 2), null, 2))
+      
       // 如果有memberId参数，过滤出该职员参与的报障
       if (memberId.value) {
         // 先获取该职员的信息
@@ -297,41 +300,47 @@ async function fetchReportList() {
         }
       }
       
-      // 按照报障类型、状态、团队队长、报障时间、对接时间的优先级进行降序排序
-      data.sort((a, b) => {
-        if (a.reportType !== b.reportType) {
-          return a.reportType > b.reportType ? -1 : 1
-        }
-        if (a.reportStatus !== b.reportStatus) {
-          return a.reportStatus > b.reportStatus ? -1 : 1
-        }
-        if (a.reportGroupLeaderName !== b.reportGroupLeaderName) {
-          return a.reportGroupLeaderName > b.reportGroupLeaderName ? -1 : 1
-        }
-        if (a.gmtCreate !== b.gmtCreate) {
-          return a.gmtCreate > b.gmtCreate ? -1 : 1
-        }
-        return a.gmtModified > b.gmtModified ? -1 : 1
-      })
-      
-      // 格式化时间和团队信息
+      // 格式化时间和团队信息（先处理数据）
       data.forEach(item => {
-        // 格式化时间（如果需要）
-        
-        // 处理团队信息
         let leaderName = ''
         let memberName = ''
         
-        if (item.reportGroup && item.reportGroup['队长']) {
-          leaderName = item.reportGroup['队长'].map(m => m.name).join(' ')
+        // 从 reportGroup 提取信息
+        if (item.reportGroup) {
+          // 提取队长信息
+          if (item.reportGroup['队长']) {
+            if (Array.isArray(item.reportGroup['队长'])) {
+              leaderName = item.reportGroup['队长'].map(m => m.name).join(' ')
+            } else if (typeof item.reportGroup['队长'] === 'object' && item.reportGroup['队长'].name) {
+              leaderName = item.reportGroup['队长'].name
+            } else if (typeof item.reportGroup['队长'] === 'string') {
+              leaderName = item.reportGroup['队长']
+            }
+          }
+          
+          // 提取队员信息
+          if (item.reportGroup['队员']) {
+            if (Array.isArray(item.reportGroup['队员'])) {
+              memberName = item.reportGroup['队员'].map(m => m.name).join(' ')
+            } else if (typeof item.reportGroup['队员'] === 'object' && item.reportGroup['队员'].name) {
+              memberName = item.reportGroup['队员'].name
+            } else if (typeof item.reportGroup['队员'] === 'string') {
+              memberName = item.reportGroup['队员']
+            }
+          }
         }
         
-        if (item.reportGroup && item.reportGroup['队员']) {
-          memberName = item.reportGroup['队员'].map(m => m.name).join(' ')
-        }
-        
+        // 设置字段
         item.reportGroupLeaderName = leaderName || '空'
         item.reportGroupMemberName = memberName || '空'
+      })
+      
+      // 按照报障时间降序排序（最新的在前）
+      data.sort((a, b) => {
+        if (a.gmtCreate !== b.gmtCreate) {
+          return a.gmtCreate > b.gmtCreate ? -1 : 1
+        }
+        return 0
       })
       
       reportList.value = data
